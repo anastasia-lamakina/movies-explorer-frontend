@@ -1,0 +1,128 @@
+.about {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.about__subheading {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: start;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.about__paragraph {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: start;
+  margin: 0;
+  margin-bottom: 3.5rem;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: min-content 4fr;
+  grid-template-rows: 2rem;
+  margin-bottom: 3.75rem;
+}
+
+.progress__entry {
+  display: grid;
+  gap: 1rem;
+}
+
+.progress__entry-cell {
+  background-color: #f2f2f2;
+  font-size: 11px;
+  line-height: 13px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  white-space: nowrap;
+  padding-left: 1.625rem;
+  padding-right: 1.625rem;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.progress__entry-cell_done {
+  background-color: #2be080;
+}
+
+.progress__entry-text {
+  font-size: 11px;
+  line-height: 13px;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+  }
+
+  .about__heading {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .about__subheading {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .about__paragraph {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 5rem;
+  }
+
+  .about__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .progress__entry-cell {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .progress__entry-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    padding-left: 4.375rem;
+    padding-right: 4.375rem;
+  }
+
+  .about__paragraph {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 7rem;
+  }
+
+  .about__content {
+    gap: 4rem;
+  }
+
+  .progress__entry-cell {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .progress__entry-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
