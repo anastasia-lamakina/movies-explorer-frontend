@@ -1,0 +1,75 @@
+.movie-card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "heading action"
+    "time action"
+    "image image";
+
+  background: #fdfdfd;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.movie-card__heading {
+  grid-area: heading;
+  margin: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  white-space: nowrap;
+  justify-self: start;
+
+  padding-left: 0.875rem;
+  padding-top: 0.875rem;
+}
+
+.movie-card__time {
+  grid-area: time;
+  margin: 0;
+  font-size: 11px;
+  line-height: 13px;
+  color: #a0a0a0;
+  justify-self: start;
+
+  padding-top: 0.625rem;
+  padding-left: 0.875rem;
+}
+
+.movie-card__action {
+  grid-area: action;
+
+  justify-self: end;
+  align-self: center;
+
+  padding-top: 0.625rem;
+  padding-right: 0.875rem;
+}
+
+.movie-card__image {
+  grid-area: image;
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  padding-top: 0.875rem;
+}
+
+.movie-card__action-button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.movie-card__action-button:hover {
+  cursor: pointer;
+}
+
+.movie-card__action-button:active {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-card__image {
+    height: 190px;
+  }
+}

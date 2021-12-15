@@ -1,0 +1,25 @@
+.saved-movies__separator {
+  background-color: #e8e8e8;
+  height: 1px;
+  margin-top: 2.5rem;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+@media screen and (min-width: 768px) {
+  .saved-movies {
+    width: calc(100% - 60px);
+  }
+
+  .saved-movies__separator {
+    margin-top: 6.25rem;
+    margin-right: unset;
+    margin-left: unset;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .saved-movies__separator {
+    margin-top: 4.375rem;
+  }
+}

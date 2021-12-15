@@ -1,0 +1,78 @@
+.hero {
+  background-color: #073042;
+}
+
+.landing__text {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  padding-top: 11rem;
+  padding-bottom: 3.75rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  color: #ffffff;
+}
+
+.landing__logo {
+  height: 230px;
+  width: 100%;
+  max-width: 680px;
+  padding-bottom: 2.5rem;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    font-size: 12px;
+    padding-top: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .landing__text {
+    max-width: 680px;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    padding-top: 18.75rem;
+    padding-bottom: 8.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header__login-link {
+    font-size: 12px;
+  }
+
+  .header__register-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    font-size: 12px;
+    padding-top: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .landing__container {
+    display: grid;
+  }
+
+  .landing__text {
+    justify-self: start;
+    margin-left: unset;
+    text-align: start;
+    padding-left: 4.375rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+
+  .landing__logo {
+    justify-self: end;
+    padding-right: 4.375rem;
+  }
+}

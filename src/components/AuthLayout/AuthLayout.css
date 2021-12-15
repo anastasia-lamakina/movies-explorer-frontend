@@ -1,0 +1,10 @@
+.auth-layout {
+  display: grid;
+  justify-items: center;
+  height: 100vh;
+  grid-template-rows: min-content auto min-content;
+}
+
+.auth-layout__main {
+  width: 100%;
+}

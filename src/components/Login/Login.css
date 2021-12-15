@@ -1,0 +1,4 @@
+.login__form {
+  display: grid;
+  gap: 20px;
+}

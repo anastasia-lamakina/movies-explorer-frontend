@@ -1,0 +1,25 @@
+.movie-grid {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 3.125rem;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+
+  display: grid;
+  grid-template-columns: 300px;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 339px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 364px);
+  }
+}

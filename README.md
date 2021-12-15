@@ -2,4 +2,4 @@
 
 Ссылка на бекенд: https://github.com/anastasia-lamakina/movies-explorer-api
 
-Ссылка на сервер: (тут будет ссылка на сервер).
+Ссылка на сервер: https://lamakina.nomoredomains.rocks/
