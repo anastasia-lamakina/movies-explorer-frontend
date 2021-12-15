@@ -6,9 +6,14 @@ import { SectionHeading } from "../../SectionHeading/SectionHeading";
 
 const PorfolioEntry = ({ text, href }) => (
   <li className="student__portfolio-list-item">
-    <a href={href} className="student__portfolio-list-item-link">
+    <a
+      target="_blank"
+      rel="noreferrer"
+      href={href}
+      className="student__portfolio-list-item-link"
+    >
       {text}
-      <img src={arrowIcon} alt="arrow icon" />
+      <img src={arrowIcon} alt="Стрелка вверх" />
     </a>
   </li>
 );
@@ -20,7 +25,7 @@ export const Student = () => (
       <img
         className="student__image"
         src={studentImage}
-        alt="Depiction of the student"
+        alt="Фотография студента"
       />
       <div className="student__container-group">
         <h3 className="student__name">Анастасия</h3>
@@ -36,6 +41,8 @@ export const Student = () => (
         <ul className="student__socials">
           <li>
             <a
+              target="_blank"
+              rel="noreferrer"
               className="student__socials-link"
               href="https://www.facebook.com/iclosemyeyes/"
             >
@@ -44,6 +51,8 @@ export const Student = () => (
           </li>
           <li>
             <a
+              target="_blank"
+              rel="noreferrer"
               className="student__socials-link"
               href="https://github.com/anastasia-lamakina"
             >

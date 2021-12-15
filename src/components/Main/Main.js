@@ -4,13 +4,17 @@ import { Footer } from "../Footer/Footer";
 import { Technologies } from "./Technologies/Technologies";
 import { Hero } from "./Hero/Hero";
 import { Student } from "./Student/Student";
+import { Header } from "./Header/Header";
 
 export const Main = () => (
   <>
-    <Hero />
-    <About />
-    <Technologies />
-    <Student />
+    <Header />
+    <main>
+      <Hero />
+      <About />
+      <Technologies />
+      <Student />
+    </main>
     <Footer />
   </>
 );

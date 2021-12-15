@@ -2,52 +2,6 @@
   background-color: #073042;
 }
 
-.header {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  justify-items: stretch;
-  font-size: 10px;
-  font-weight: 500;
-  padding-top: 18px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.header__logo {
-  height: 2.375rem;
-  width: 2.375rem;
-}
-
-.header__links {
-  place-self: end;
-  align-self: center;
-
-  display: grid;
-  grid-auto-flow: column;
-  gap: 14px;
-  align-items: center;
-}
-
-.header__register-link {
-  color: white;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 16px;
-  text-decoration: none;
-}
-
-.header__login-link {
-  background-color: #2be080;
-  border-radius: 3px;
-  padding: 5px 12px 5px 12px;
-  color: black;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 16px;
-  text-decoration: none;
-}
-
 .landing__text {
   margin: 0;
   font-style: normal;

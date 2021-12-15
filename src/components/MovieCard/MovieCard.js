@@ -6,7 +6,7 @@ import deleteIcon from "../../images/deleteIcon.svg";
 
 const ActionButton = ({ actionIcon }) => (
   <button className="movie-card__action-button">
-    <img src={actionIcon} />
+    <img src={actionIcon} alt="Кнопка" />
   </button>
 );
 
@@ -26,6 +26,6 @@ export const MovieCard = ({ title, length, image, saved, deleteMovie }) => (
         }
       })()}
     </div>
-    <img className="movie-card__image" src={image} />
+    <img className="movie-card__image" src={image} alt="Превью фильма" />
   </li>
 );

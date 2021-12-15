@@ -10,12 +10,19 @@ export const Footer = () => (
     <div className="footer__group">
       <ul className="footer__link-list">
         <li className="footer__link-item">
-          <a className="footer__link" href="https://practicum.yandex.ru/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="footer__link"
+            href="https://practicum.yandex.ru/"
+          >
             Яндекс.Практикум
           </a>
         </li>
         <li className="footer__link-item">
           <a
+            target="_blank"
+            rel="noreferrer"
             className="footer__link"
             href="https://github.com/anastasia-lamakina"
           >
@@ -24,6 +31,8 @@ export const Footer = () => (
         </li>
         <li className="footer__link-item">
           <a
+            target="_blank"
+            rel="noreferrer"
             className="footer__link"
             href="https://www.facebook.com/iclosemyeyes/"
           >

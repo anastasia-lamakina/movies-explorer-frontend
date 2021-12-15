@@ -3,6 +3,7 @@ import { AuthFooter } from "../AuthFooter/AuthFooter";
 import { AuthHeader } from "../AuthHeader/AuthHeader";
 import { AuthLayout } from "../AuthLayout/AuthLayout";
 import { InputField } from "../InputField/InputField";
+import "./Register.css";
 
 export const Register = () => (
   <AuthLayout
@@ -16,7 +17,7 @@ export const Register = () => (
       />
     }
   >
-    <form>
+    <form className="register__form">
       <InputField name="name" label="Имя" />
       <InputField name="email" label="E-mail" type="email" />
       <InputField name="password" label="Пароль" type="password" />

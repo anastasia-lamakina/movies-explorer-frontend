@@ -12,13 +12,13 @@ const MenuHeader = () => {
   return (
     <header className="menu-header">
       <Link to="/" className="menu-header__logo">
-        <img src={headerLogo} />
+        <img src={headerLogo} alt="Логотип" />
       </Link>
       <button
         className="menu-header__hamburger"
         onClick={() => setMenuOpen(true)}
       >
-        <img src={hamburgerIcon} alt="hamburger icon" />
+        <img src={hamburgerIcon} alt="Гамбургер" />
       </button>
       <div
         className={`menu-header__menu ${
@@ -29,7 +29,7 @@ const MenuHeader = () => {
           className="menu-header__hamburger-close"
           onClick={() => setMenuOpen(false)}
         >
-          <img src={closeIcon} alt="close hamburger icon" />
+          <img src={closeIcon} alt="Закрытие меню" />
         </button>
         <div
           className="menu-header__menu-transparency"
@@ -72,7 +72,7 @@ const MenuHeader = () => {
             <p>Аккаунт</p>
             <img
               src={accountIcon}
-              alt="account"
+              alt="Аккаунт"
               className="menu-header__account-logo"
             />
           </NavLink>
@@ -103,7 +103,7 @@ const MenuHeader = () => {
           <p>Аккаунт</p>
           <img
             src={accountIcon}
-            alt="account"
+            alt="Аккаунт"
             className="menu-header__account-logo"
           />
         </NavLink>

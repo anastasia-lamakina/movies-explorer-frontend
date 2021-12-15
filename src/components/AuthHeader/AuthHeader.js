@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const AuthHeader = ({ children: text }) => (
   <header className="auth-header">
     <Link to="/" className="auth-header__logo">
-      <img src={headerLogo} />
+      <img src={headerLogo} alt="Логотип" />
     </Link>
     <h1 className="auth-header__heading">{text}</h1>
   </header>

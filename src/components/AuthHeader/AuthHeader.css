@@ -26,6 +26,12 @@
 @media screen and (min-width: 1024px) {
   .auth-header {
     text-align: start;
+    width: 80vw;
+    max-width: 400px;
+  }
+
+  .auth-header__heading {
+    padding-top: 40px;
   }
 
   .auth-header__logo {
