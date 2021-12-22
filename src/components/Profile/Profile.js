@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react/cjs/react.development";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { getUser, patchUserUpdate, postLogout } from "../../utils/MainApi";
 import { useModal } from "../../utils/modal";

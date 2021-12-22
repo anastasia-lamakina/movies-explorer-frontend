@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MovieCard.css";
 import saveIcon from "../../images/saveIcon.svg";
 import savedIcon from "../../images/savedIcon.svg";
 import deleteIcon from "../../images/deleteIcon.svg";
-import { useState } from "react/cjs/react.development";
 import { Preloader } from "../Preloader/Preloader";
 
 const ActionButton = ({ actionIcon, onClick }) => (

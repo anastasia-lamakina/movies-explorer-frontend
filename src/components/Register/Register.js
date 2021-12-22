@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react/cjs/react.development";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { getUser, postUserSignin, postUserSignup } from "../../utils/MainApi";
 import { useModal } from "../../utils/modal";

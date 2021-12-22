@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getMovies } from "../../utils/MoviesApi";
 import { Footer } from "../Footer/Footer";
 import { AuthLayout } from "../AuthLayout/AuthLayout";
@@ -14,7 +14,6 @@ import {
   getSavedMovies,
   postSaveMovie,
 } from "../../utils/MainApi";
-import { useContext } from "react/cjs/react.development";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 export const Movies = () => {

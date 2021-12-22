@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import { ModalContext } from "../../contexts/ModalContext";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Login } from "../Login/Login";

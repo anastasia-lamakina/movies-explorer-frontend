@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext, useEffect, useState } from "react/cjs/react.development";
+import React, { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { MOVIES_FILE_URL } from "../../utils/constants";
 import { deleteUnsaveMovie, getSavedMovies } from "../../utils/MainApi";

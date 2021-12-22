@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./MoviesSearch.css";
 import searchIcon from "../../images/searchIcon.svg";
-import { useEffect, useState } from "react/cjs/react.development";
 
 export const MoviesSearch = ({ onSearchSubmit, onShowShortMoviesToggle }) => {
   const inputRef = useRef();
