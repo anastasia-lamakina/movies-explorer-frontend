@@ -28,6 +28,7 @@ export const Login = () => {
         navigate("/movies");
       })
       .catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFormSubmit = (e) => {

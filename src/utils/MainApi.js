@@ -96,7 +96,7 @@ export const postSaveMovie = ({
 }) => {
   return new Promise(async (resolve) => {
     try {
-      const res = await fetch(`${MAIN_API_URL}/movies`, {
+      await fetch(`${MAIN_API_URL}/movies`, {
         method: "POST",
         credentials: "include",
         headers: {

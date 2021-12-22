@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react/cjs/react.development";
+import { useEffect, useRef } from "react/cjs/react.development";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { getUser, patchUserUpdate, postLogout } from "../../utils/MainApi";
 import { useModal } from "../../utils/modal";
@@ -21,6 +21,7 @@ export const Profile = () => {
 
   useEffect(() => {
     setValues({ name, email });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (e) => {
