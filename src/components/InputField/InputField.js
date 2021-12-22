@@ -7,11 +7,13 @@ export const InputField = ({
   minLength = undefined,
   maxLength = undefined,
   type = undefined,
-  value,
+  value = "",
   onChange = () => {},
   inputRef,
   label,
   variant,
+  errors,
+  required,
 }) => (
   <div
     className={`input__container ${
@@ -20,7 +22,7 @@ export const InputField = ({
   >
     <label
       className={`input__label ${variant === "alt" ? "input__label_alt" : ""}`}
-      for={name}
+      htmlFor={name}
     >
       {label}
     </label>
@@ -29,13 +31,13 @@ export const InputField = ({
       className={`input ${variant === "alt" ? "input_alt" : ""}`}
       placeholder={placeholder}
       name={name}
-      required
+      required={required}
       minLength={minLength}
       maxLength={maxLength}
       type={type}
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={(e) => onChange(e)}
     />
-    {/*     <span id={`${name}-error`} className="input__span"></span> */}
+    {errors?.[name] && <span className="input__span">{errors[name]}</span>}
   </div>
 );

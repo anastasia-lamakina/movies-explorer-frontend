@@ -5,12 +5,17 @@ import "./AuthFooter.css";
 export const AuthFooter = ({
   buttonText,
   onButtonClick,
+  buttonDisabled,
   bottomText,
   bottomLinkText,
   bottomLinkTo,
 }) => (
   <footer className="auth-footer">
-    <button className="auth-footer__button" onClick={onButtonClick}>
+    <button
+      className="auth-footer__button"
+      onClick={onButtonClick}
+      disabled={buttonDisabled}
+    >
       {buttonText}
     </button>
     <div className="auth-footer__bottom-container">

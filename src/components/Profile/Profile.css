@@ -58,6 +58,14 @@
   cursor: pointer;
 }
 
+.profile__save-button:disabled {
+  opacity: 0.8;
+}
+
+.profile__save-button:disabled:hover {
+  cursor: not-allowed;
+}
+
 @media screen and (min-width: 768px) {
   .profile__input-container {
     padding-top: 6rem;

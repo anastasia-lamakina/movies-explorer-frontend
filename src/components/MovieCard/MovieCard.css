@@ -18,7 +18,10 @@
   font-size: 15px;
   line-height: 18px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   justify-self: start;
+  max-width: 250px;
 
   padding-left: 0.875rem;
   padding-top: 0.875rem;
@@ -52,6 +55,10 @@
   height: 168px;
   object-fit: cover;
   padding-top: 0.875rem;
+}
+
+.movie-card__image:hover {
+  cursor: pointer;
 }
 
 .movie-card__action-button {

@@ -40,8 +40,11 @@ const MenuHeader = () => {
             <li>
               <NavLink
                 to="/"
-                className="menu-header__menu-link"
-                activeClassName="menu-header__menu-link_active"
+                className={({ isActive }) =>
+                  `menu-header__menu-link ${
+                    isActive ? "menu-header__menu-link_active" : ""
+                  }`
+                }
               >
                 Главная
               </NavLink>
@@ -49,8 +52,11 @@ const MenuHeader = () => {
             <li>
               <NavLink
                 to="/movies"
-                className="menu-header__menu-link"
-                activeClassName="menu-header__menu-link_active"
+                className={({ isActive }) =>
+                  `menu-header__menu-link ${
+                    isActive ? "menu-header__menu-link_active" : ""
+                  }`
+                }
               >
                 Фильмы
               </NavLink>
@@ -58,8 +64,11 @@ const MenuHeader = () => {
             <li>
               <NavLink
                 to="/saved-movies"
-                className="menu-header__menu-link"
-                activeClassName="menu-header__menu-link_active"
+                className={({ isActive }) =>
+                  `menu-header__menu-link ${
+                    isActive ? "menu-header__menu-link_active" : ""
+                  }`
+                }
               >
                 Сохранённые фильмы
               </NavLink>
@@ -83,8 +92,11 @@ const MenuHeader = () => {
           <li>
             <NavLink
               to="/movies"
-              className="menu-header__menu-link"
-              activeClassName="menu-header__menu-link_active"
+              className={({ isActive }) =>
+                `menu-header__menu-link ${
+                  isActive ? "menu-header__menu-link_active" : ""
+                }`
+              }
             >
               Фильмы
             </NavLink>
@@ -92,8 +104,11 @@ const MenuHeader = () => {
           <li>
             <NavLink
               to="/saved-movies"
-              className="menu-header__menu-link"
-              activeClassName="menu-header__menu-link_active"
+              className={({ isActive }) =>
+                `menu-header__menu-link ${
+                  isActive ? "menu-header__menu-link_active" : ""
+                }`
+              }
             >
               Сохранённые фильмы
             </NavLink>

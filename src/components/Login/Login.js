@@ -1,4 +1,10 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react/cjs/react.development";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { getUser, postUserSignin } from "../../utils/MainApi";
+import { useModal } from "../../utils/modal";
+import { useFormWithValidation } from "../../utils/validation";
 import { AuthFooter } from "../AuthFooter/AuthFooter";
 import { AuthHeader } from "../AuthHeader/AuthHeader";
 import { AuthLayout } from "../AuthLayout/AuthLayout";
@@ -7,6 +13,43 @@ import "./Login.css";
 
 export const Login = () => {
   const formRef = useRef();
+  const navigate = useNavigate();
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+
+  const { openModal } = useModal();
+  const userContext = useContext(CurrentUserContext);
+
+  useEffect(() => {
+    getUser()
+      .then((user) => {
+        userContext.setName(user.name);
+        userContext.setEmail(user.email);
+        userContext.setId(user._id);
+        navigate("/movies");
+      })
+      .catch(() => {});
+  }, []);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      email: values.email,
+      password: values.password,
+    };
+
+    postUserSignin(data)
+      .then(() => {
+        getUser().then((user) => {
+          userContext.setName(user.name);
+          userContext.setEmail(user.email);
+          userContext.setId(user._id);
+          navigate("/movies");
+        });
+      })
+      .catch((err) => {
+        openModal("error", err.message);
+      });
+  };
 
   return (
     <AuthLayout
@@ -17,15 +60,36 @@ export const Login = () => {
           bottomText={"Ещё не зарегистрированы?"}
           bottomLinkText={"Регистрация"}
           bottomLinkTo={"/signup"}
-          onButtonClick={() =>
-            formRef.current.submit((e) => e.preventDefault())
+          buttonDisabled={!isValid}
+          onButtonClick={(e) =>
+            formRef.current.dispatchEvent(
+              new Event("submit", { bubbles: true, cancelable: true })
+            )
           }
         />
       }
     >
-      <form ref={formRef} className="login__form">
-        <InputField name="email" label="E-mail" type="email" />
-        <InputField name="password" label="Пароль" type="password" />
+      <form ref={formRef} className="login__form" onSubmit={handleFormSubmit}>
+        <InputField
+          name="email"
+          label="E-mail"
+          type="email"
+          value={values.email}
+          onChange={handleChange}
+          minLength={2}
+          errors={errors}
+          required
+        />
+        <InputField
+          name="password"
+          label="Пароль"
+          type="password"
+          value={values.password}
+          onChange={handleChange}
+          required
+          minLength={8}
+          errors={errors}
+        />
       </form>
     </AuthLayout>
   );
