@@ -125,7 +125,7 @@ export const postSaveMovie = ({
 };
 
 export const patchUserUpdate = ({ name, email }) => {
-  return new Promise(async (resolve) => {
+  return new Promise(async (resolve, reject) => {
     try {
       const res = await fetch(`${MAIN_API_URL}/users/me`, {
         method: "PATCH",
@@ -138,6 +138,12 @@ export const patchUserUpdate = ({ name, email }) => {
           email,
         }),
       });
+
+      if (!res.ok) {
+        reject(await res.json());
+      } else {
+        resolve(await res.json());
+      }
 
       resolve(await res.json());
     } catch (error) {
