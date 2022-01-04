@@ -25,6 +25,7 @@
 }
 
 .not-found__link {
+  all: unset;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -33,6 +34,10 @@
   text-decoration: none;
   align-self: end;
   padding-bottom: 2rem;
+}
+
+.not-found__link:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

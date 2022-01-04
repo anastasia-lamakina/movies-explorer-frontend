@@ -2,16 +2,22 @@ import React, { useRef, useEffect, useState } from "react";
 import "./MoviesSearch.css";
 import searchIcon from "../../images/searchIcon.svg";
 
-export const MoviesSearch = ({ onSearchSubmit, onShowShortMoviesToggle }) => {
+export const MoviesSearch = ({
+  onSearchSubmit,
+  onShowShortMoviesToggle,
+  searchValue = null,
+  shortMovieLocalStorageKey,
+}) => {
   const inputRef = useRef();
-  const [showShortMovies, setShowShortMovies] = useState(false);
+  const [showShortMovies, setShowShortMovies] = useState(
+    localStorage.getItem(shortMovieLocalStorageKey) === "true"
+  );
 
   useEffect(() => {
-    const previousSearchString = localStorage.getItem("movie-search-string");
-    if (previousSearchString) {
-      inputRef.current.value = previousSearchString;
+    if (searchValue) {
+      inputRef.current.value = searchValue;
     }
-  }, []);
+  }, [searchValue]);
 
   useEffect(() => {
     onShowShortMoviesToggle(showShortMovies);

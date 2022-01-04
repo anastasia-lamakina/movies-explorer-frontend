@@ -18,7 +18,7 @@ export const PrivateRoute = () => {
         setUserSignedIn(true);
       })
       .catch(() => {
-        navigate("/signin");
+        navigate("/");
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -18,18 +18,6 @@ export const Login = () => {
   const { openModal } = useModal();
   const userContext = useContext(CurrentUserContext);
 
-  useEffect(() => {
-    getUser()
-      .then((user) => {
-        userContext.setName(user.name);
-        userContext.setEmail(user.email);
-        userContext.setId(user._id);
-        navigate("/movies");
-      })
-      .catch(() => {});
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -74,6 +62,7 @@ export const Login = () => {
           name="email"
           label="E-mail"
           type="email"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
           value={values.email}
           onChange={handleChange}
           minLength={2}

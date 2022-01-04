@@ -36,6 +36,8 @@ export const Profile = () => {
           setName(user.name);
           setEmail(user.email);
           setId(user._id);
+
+          openModal("success", "Профиль обновлен.");
         });
       })
       .catch((err) => {
@@ -51,7 +53,7 @@ export const Profile = () => {
 
   const handleLogout = () => {
     postLogout().then(() => {
-      navigate("/signin");
+      navigate("/");
     });
   };
 

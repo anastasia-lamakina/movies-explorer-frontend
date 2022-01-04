@@ -14,6 +14,7 @@ export const InputField = ({
   variant,
   errors,
   required,
+  pattern,
 }) => (
   <div
     className={`input__container ${
@@ -37,6 +38,7 @@ export const InputField = ({
       type={type}
       value={value}
       onChange={(e) => onChange(e)}
+      pattern={pattern}
     />
     {errors?.[name] && <span className="input__span">{errors[name]}</span>}
   </div>

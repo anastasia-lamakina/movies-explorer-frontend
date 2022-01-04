@@ -90,6 +90,7 @@ export const Register = () => {
           minLength={2}
           required
           errors={errors}
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
         />
         <InputField
           name="password"

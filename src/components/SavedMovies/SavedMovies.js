@@ -1,6 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { MOVIES_FILE_URL } from "../../utils/constants";
+import {
+  BREAKPOINT_DESKTOP,
+  BREAKPOINT_TABLET,
+  MOVIES_FILE_URL,
+  MOVIES_TO_ADD_DESKTOP,
+  MOVIES_TO_ADD_MOBILE,
+  MOVIES_TO_ADD_TABLET,
+  MOVIES_TO_SHOW_DESKTOP,
+  MOVIES_TO_SHOW_MOBILE,
+  MOVIES_TO_SHOW_TABLET,
+  SHORT_MOVIE_DURATION,
+} from "../../utils/constants";
 import { deleteUnsaveMovie, getSavedMovies } from "../../utils/MainApi";
 import { getMovies } from "../../utils/MoviesApi";
 import { AuthLayout } from "../AuthLayout/AuthLayout";
@@ -17,7 +28,7 @@ export const SavedMovies = () => {
   const [additionalMoviesToShow, setAdditionalMoviesToShow] = useState(0);
   const [moviesShown, setMoviesShown] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
-  const [searchString, setSearchString] = useState(null);
+  const [searchString, setSearchString] = useState("");
   const [screenSize, setScreenSize] = useState("mobile");
   const [filterOnlyShortMovies, setFilterOnlyShortMovies] = useState(false);
   const currentUser = useContext(CurrentUserContext);
@@ -26,8 +37,14 @@ export const SavedMovies = () => {
     handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
 
-    setSearchString(localStorage.getItem("saved-movie-search-string"));
-    getMovies().then((movies) => setMovies(movies));
+    const localStorageMovies = JSON.parse(localStorage.getItem("movies"));
+
+    if (!localStorageMovies) {
+      getMovies().then((movies) => setMovies(movies));
+    } else {
+      setMovies(localStorageMovies);
+    }
+
     getSavedMovies().then((movies) => setSavedMovies(movies));
 
     return () => {
@@ -40,15 +57,16 @@ export const SavedMovies = () => {
       getMovieCountBasedOnScreenSize() + additionalMoviesToShow;
 
     const filteredMovies = movies
+      .filter((movie) => isSavedMovie(movie))
       .filter(
         (movie) =>
           movie.nameRU?.toLowerCase().includes(searchString?.toLowerCase()) ||
           movie.nameEN?.toLowerCase().includes(searchString?.toLowerCase())
       )
-      .filter((movie) => (filterOnlyShortMovies ? movie.duration < 40 : true))
-      .filter((_, index) => index < moviesShownCount)
-      .filter((movie) => isSavedMovie(movie));
-
+      .filter((movie) =>
+        filterOnlyShortMovies ? movie.duration < SHORT_MOVIE_DURATION : true
+      )
+      .filter((_, index) => index < moviesShownCount);
     setMoviesShown(filteredMovies);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -66,44 +84,46 @@ export const SavedMovies = () => {
 
   const getMovieCountBasedOnScreenSize = () => {
     if (screenSize === "desktop") {
-      return 12;
+      return MOVIES_TO_SHOW_DESKTOP;
     }
 
     if (screenSize === "tablet") {
-      return 8;
+      return MOVIES_TO_SHOW_TABLET;
     }
 
-    return 5;
+    return MOVIES_TO_SHOW_MOBILE;
   };
 
   const handleWindowResize = () => {
-    if (window.innerWidth <= 767) {
+    if (window.innerWidth < BREAKPOINT_TABLET) {
       setScreenSize("mobile");
     }
 
-    if (window.innerWidth >= 768 && window.innerWidth <= 1023) {
+    if (
+      window.innerWidth >= BREAKPOINT_TABLET &&
+      window.innerWidth < BREAKPOINT_DESKTOP
+    ) {
       setScreenSize("tablet");
     }
 
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= BREAKPOINT_DESKTOP) {
       setScreenSize("desktop");
     }
   };
 
   const handleLoadMoreButtonClick = () => {
     if (screenSize === "desktop") {
-      setAdditionalMoviesToShow((v) => v + 3);
+      setAdditionalMoviesToShow((v) => v + MOVIES_TO_ADD_DESKTOP);
     } else if (screenSize === "tablet") {
-      setAdditionalMoviesToShow((v) => v + 2);
+      setAdditionalMoviesToShow((v) => v + MOVIES_TO_ADD_TABLET);
     } else {
       // mobile
-      setAdditionalMoviesToShow((v) => v + 1);
+      setAdditionalMoviesToShow((v) => v + MOVIES_TO_ADD_MOBILE);
     }
   };
 
   const handleSearchSubmit = (val) => {
     setSearchString(val);
-    localStorage.setItem("saved-movie-search-string", val);
   };
 
   const handleShowShortMoviesToggle = (val) => {
@@ -112,8 +132,9 @@ export const SavedMovies = () => {
 
   const handleMovieAction = async (movieObject, action) => {
     if (action === "delete") {
-      deleteUnsaveMovie(getSavedMovieId(movieObject)).then(() => {
-        getSavedMovies().then((movies) => setSavedMovies(movies));
+      const movieId = getSavedMovieId(movieObject);
+      deleteUnsaveMovie(movieId).then(() => {
+        setSavedMovies(savedMovies.filter((movie) => movie._id !== movieId));
       });
     }
   };

@@ -96,7 +96,7 @@ export const postSaveMovie = ({
 }) => {
   return new Promise(async (resolve) => {
     try {
-      await fetch(`${MAIN_API_URL}/movies`, {
+      const res = await fetch(`${MAIN_API_URL}/movies`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -117,7 +117,7 @@ export const postSaveMovie = ({
         }),
       });
 
-      resolve();
+      resolve(await res.json());
     } catch (error) {
       console.log(error);
     }
@@ -144,8 +144,6 @@ export const patchUserUpdate = ({ name, email }) => {
       } else {
         resolve(await res.json());
       }
-
-      resolve(await res.json());
     } catch (error) {
       console.log(error);
     }
