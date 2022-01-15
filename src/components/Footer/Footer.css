@@ -65,7 +65,8 @@
   }
 
   .footer__link-list {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: end;
   }
 

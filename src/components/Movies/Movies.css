@@ -32,6 +32,10 @@
   opacity: 0.8;
 }
 
+.movies__nothing-found-text {
+  padding-top: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .movies {
     width: calc(100% - 60px);

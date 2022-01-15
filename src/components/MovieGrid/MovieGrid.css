@@ -12,14 +12,29 @@
   gap: 1rem;
 }
 
+.movie-grid_centered {
+  grid-template-columns: 300px;
+  justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
   .movie-grid {
     grid-template-columns: repeat(2, 339px);
+  }
+
+  .movie-grid_centered {
+    grid-template-columns: 339px;
+    justify-content: center;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .movie-grid {
     grid-template-columns: repeat(3, 364px);
+  }
+
+  .movie-grid_centered {
+    grid-template-columns: 364px;
+    justify-content: center;
   }
 }

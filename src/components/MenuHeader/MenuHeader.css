@@ -120,7 +120,7 @@
 }
 
 .menu-header__menu-link_active {
-  text-decoration: underline;
+  font-weight: 500;
 }
 
 .menu-header__menu-link:visited {
@@ -171,5 +171,9 @@
     font-size: 13px;
     line-height: 18px;
     white-space: nowrap;
+  }
+
+  .menu-header__menu-link_active {
+    font-weight: 500;
   }
 }

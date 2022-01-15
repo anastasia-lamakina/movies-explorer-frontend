@@ -1,87 +1,15 @@
-import movie1 from "../images/movies/1.jpg";
-import movie2 from "../images/movies/2.jpg";
-import movie3 from "../images/movies/3.jpg";
-import movie4 from "../images/movies/4.jpg";
-import movie5 from "../images/movies/5.jpg";
-import movie6 from "../images/movies/6.jpg";
-import movie7 from "../images/movies/7.jpg";
-import movie8 from "../images/movies/8.jpg";
-import movie9 from "../images/movies/9.jpg";
-import movie10 from "../images/movies/10.jpg";
-import movie11 from "../images/movies/11.jpg";
-import movie12 from "../images/movies/12.jpg";
+//export const MAIN_API_URL = "http://localhost:3001";
+export const MAIN_API_URL = "https://lamakina.nomoredomains.rocks/api";
 
-export const movies = [
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie1,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie2,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: true,
-    image: movie3,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie4,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: true,
-    image: movie5,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie6,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie7,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie8,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie9,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: true,
-    image: movie10,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie11,
-    length: "1ч 47м",
-  },
-  {
-    title: "33 слова о дизайне",
-    saved: false,
-    image: movie12,
-    length: "1ч 47м",
-  },
-];
+export const MOVIES_API_URL = "https://api.nomoreparties.co/beatfilm-movies";
+export const MOVIES_FILE_URL = "https://api.nomoreparties.co";
+export const SHORT_MOVIE_DURATION = 40;
+export const MOVIES_TO_SHOW_DESKTOP = 12;
+export const MOVIES_TO_SHOW_TABLET = 8;
+export const MOVIES_TO_SHOW_MOBILE = 5;
+export const MOVIES_TO_ADD_DESKTOP = 3;
+export const MOVIES_TO_ADD_TABLET = 2;
+export const MOVIES_TO_ADD_MOBILE = 1;
+
+export const BREAKPOINT_TABLET = 768;
+export const BREAKPOINT_DESKTOP = 1024;
